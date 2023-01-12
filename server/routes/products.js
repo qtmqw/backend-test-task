@@ -4,7 +4,7 @@ const db = require('../config/db')
 
 // get all products
 router.get("/", (req, res) => {
-    const q = "SELECT * FROM `sql7588516`.`products`"
+    const q = "SELECT * FROM `pr_prakse`.`products`"
     db.query(q, (err, data) => {
         res.json(data)
     })
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
 // add product
 router.post("/add", (req, res) => {
-    const q = "INSERT INTO `sql7588516`.`products` (`Sku`, `Name`, `Price`, `Size`, `Weight`, `Width`, `Lenght`, `Height`, `ProductType`) VALUES (?)"
+    const q = "INSERT INTO `products` (`Sku`, `Name`, `Price`, `Size`, `Weight`, `Width`, `Lenght`, `Height`) VALUES (?)"
     const values = [
         req.body.Sku,
         req.body.Name,
@@ -22,7 +22,6 @@ router.post("/add", (req, res) => {
         req.body.Width,
         req.body.Lenght,
         req.body.Height,
-        req.body.ProductType
     ]
 
     db.query(q, [values], (err, result) => {

@@ -1,10 +1,10 @@
 const mysql = require('mysql2')
 
 const db = mysql.createConnection({
-    host: "sql7.freesqldatabase.com",
-    user: "sql7588516",
-    password: 'IKfsvFeUpC',
-    database: 'sql7588516'
+    host: "db4free.net",
+    user: "pr_dmozolins",
+    password: 'LNSWDr*G#2ip5dar',
+    database: 'pr_prakse'
 })
 console.log("DB connected!")
 module.exports = db
